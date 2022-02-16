@@ -25,8 +25,7 @@ namespace DynamicPlanner.Hooks
 		[BeforeTestRun]
 		public static void BeforeTestRun()
 		{
-			_driverFactory = new DriverFactory();
-			//Directory.CreateDirectory(Path.Combine("..", "..", "TestResults"));
+			_driverFactory = new DriverFactory();	
 		}
 
 		[BeforeScenario(Order = 0)]
@@ -41,10 +40,6 @@ namespace DynamicPlanner.Hooks
 		[AfterScenario]
 		public void AfterScenario(ScenarioContext scenarioContext)
 		{
-			//if (scenarioContext.TestError != null)
-			//{
-			//	_driver.TakeScreenshot().SaveAsFile(Path.Combine("..", "..", "TestResults", $"{scenarioContext.ScenarioInfo.Title}.png"), ScreenshotImageFormat.Png);
-			//}
 			_driver?.Dispose();
 		}
 	}
