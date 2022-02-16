@@ -25,7 +25,7 @@ namespace DynamicPlanner.PageObjects
             pageTitle.Should().Contain(title);
         }
 
-        private bool IsElementPresent(By by)
+        public bool IsElementPresent(By by)
         {
             try
             {
